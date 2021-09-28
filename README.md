@@ -12,3 +12,4 @@ Features:
 8.You can apply all filters at the same time.
 9.You can delete the added income/expense transaction.
 10.You can edit the added income/expense transactions.
+11.The data is stored in the localStorage in order to avoid loss during refresh.
