@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Expense Tracker</title>
+  <link rel="ico" href="favicon.ico">
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,200;1,500&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+
+  <div class="banner bg-primary">
+    <h1>Expense Tracker</h1>
+    <h2 class="my-5">
+      Total budget : <span id="totalBudget" class="text-light">NRS 2000</span>
+    </h2>
+    <div class="row my-4">
+      <div class="col-6">
+        <h2>
+          Expence :
+          <span id="totalExpendicture" class="text-light">NRS 150440</span>
+        </h2>
+      </div>
+      <div class="col-6">
+        <h2>
+          Income : <span id="totalIncome" class="text-light">NRS 3500</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div style="padding-left: 100px;padding-right: 100px;">
+    <div id="alert_div"></div>
+    <h1 class="my-3"><strong>Set Limiits</strong></h1>
+    <form id="limit_form">
+      <div class="row">
+        <div class="form-group col-3">
+          <label for="daily_limits">Daily Limit</label>
+          <input type="number" class="form-control" name="daily_limits" id="daily_limits" placeholder="Daily Limit" required />
+        </div>
+        <div class="form-group col-3">
+          <label for="monthly_limits">Montly Limit</label>
+          <input type="number" class="form-control" name="monthly_limits" id="monthly_limits" placeholder="Monthly Limits" required />
+        </div>
+
+
+        <div class="col-2">
+          <div><br></div>
+          <button type="submit" class="btn btn-danger" style="position: relative;">Add Limits</button>
+        </div>
+
+      </div>
+    </form>
+    <h1 class="my-3"><strong>Add Amounts(Income/Expense)</strong></h1>
+    <form id="form-first">
+      <div class="row">
+        <div class="form-group col-3">
+          <label for="amount">Amount</label>
+          <input type="number"  class="form-control" name="amount" id="amount" placeholder="Amount" required />
+        </div>
+        <div class="form-group col-3">
+          <label for="type">Type</label>
+          <select class="form-control" name="type" id="type" required>
+            <option value="Income">Income</option>
+            <option value="Expendicture">Expendicture</option>
+          </select>
+        </div>
+        <div class="form-group col-2">
+          <label for="catogry">Category</label>
+          <select class="form-control" name="amount_category" id="amount_category" required>
+            <option value="food">Food</option>
+            <option value="entrtaintment">Entrtaintment</option>
+            <option value="travelling">Travelling</option>
+            <option value="salary">Salary</option>
+            <option value="bonus">Bonus</option>
+            <option value="shareMarket">Share Market</option>
+          </select>
+        </div>
+        <div class="form-group col-3">
+          <label for="Date">Date</label>
+          <input type="date" class="form-control" name="date" id="date" placeholder="Date" required />
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="form-group col-11">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" name="description" id="description" placeholder="Description"
+            required />
+        </div>
+        <div class="col-1">
+          <div><br></div>
+          <button type="submit" class="btn btn-danger" style="position: relative;">Add</button>
+        </div>
+      </div>
+
+
+    </form>
+    <h1 class="my-3"><strong>Filter</strong></h1>
+    <form id="filterForm">
+      <div class="row">
+
+        <div class="form-group col-3">
+          <label for="fromDate">From Date</label>
+          <input type="date" class="form-control" name="filter_date_from" id="filter_date_from" placeholder="Date" />
+        </div>
+        <div class="form-group col-3">
+          <label for="toDate">To Date</label>
+          <input type="date" class="form-control" name="filter_date_to" id="filter_date_to" placeholder="Date" />
+        </div>
+
+        <div class="form-group col-3">
+          <label for="type">Type</label>
+          <select class="form-control" name="type_filter" id="type_filter">
+            <option value="">All</option>
+            <option value="Income">Income</option>
+            <option value="Expendicture">Expendicture</option>
+          </select>
+        </div>
+
+        <div class="form-group col-3">
+          <label for="catogry">Category</label>
+          <select class="form-control" name="amount_category_filter" id="amount_category_filter">
+            <option value="">All</option>
+            <option value="food">Food</option>
+            <option value="entrtaintment">Entrtaintment</option>
+            <option value="travelling">Travelling</option>
+            <option value="salary">Salary</option>
+            <option value="bonus">Bonus</option>
+            <option value="shareMarket">Share Market</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-5">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" name="description_filter" id="description_filter" placeholder="Description"
+             />
+        </div>
+
+
+        <div class="col-2">
+          <div><br></div>
+          <button type="submit" class="btn btn-danger" style="position: relative;">Filter</button>
+        </div>
+
+        <div class="col-3">
+          <div><br></div>
+          <button type="button" id="resetFilter" class="btn btn-success" style="position: relative;">Reset Filter</button>
+        </div>
+      </div>
+  
+  </form>
+
+
+
+
+
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-1">Id</th>
+          <th class="col-1">Type</th>
+          <th class="col-2">Category</th>
+          <th class="col-3">Description</th>
+          <th class="col-1">Amount</th>
+          <th class="col-2">Date</th>
+          <th class="col-1">Edit</th>
+          <th class="col-1">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form id="form-first-edit">
+
+            <input type="number" class="form-control" name="id" id="id" hidden />
+
+            <label for="amount_edit">Amount</label>
+            <input type="number" class="form-control" name="amount_edit" id="amount_edit" placeholder="Amount"
+              required />
+
+
+            <label for="type_edit">Type</label>
+            <select class="form-control" name="type_edit" id="type_edit" required>
+              <option value="Income">Income</option>
+              <option value="Expendicture">Expendicture</option>
+            </select>
+
+
+            <label for="catogry_edit">Category</label>
+            <select class="form-control" name="amount_category_edit" id="amount_category_edit" required>
+              <option value="food">Food</option>
+              <option value="entrtaintment">Entrtaintment</option>
+              <option value="travelling">Travelling</option>
+              <option value="salary">Salary</option>
+              <option value="bonus">Bonus</option>
+              <option value="shareMarket">Share Market</option>
+            </select>
+
+
+            <label for="Date">Date</label>
+            <input type="date" class="form-control" name="date_edit" id="date_edit" placeholder="Date" required />
+
+
+
+
+            <label for="description_edit">Description</label>
+            <input type="text" class="form-control" name="description_edit" id="description_edit"
+              placeholder="Description" required />
+            <br>
+            <button type="submit" class="btn btn-primary" style="position: relative;">Edit</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/app.js" type="module"></script>
+</body>
+
+</html>

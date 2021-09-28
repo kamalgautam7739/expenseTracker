@@ -1,0 +1,21 @@
+body{
+    font-family: 'Poppins', sans-serif;
+  
+}.banner {
+   
+    justify-content: space-between;
+    text-align: center;
+    width:100vw;
+   
+
+}
+h1{
+    font-size: 24px;
+}
+h2{
+    font-size: 18px;
+}
+ .row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
